@@ -41,7 +41,7 @@ const Table = ({ todo, setTodo, isLoading }) => {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://127.0.0.1:8000/api/todoApp/${id}/`
+        `https://satyay.pythonanywhere.com/${id}/`
       );
       const newList = todo.filter((td) => td.id !== id);
       setTodo(newList);
@@ -52,7 +52,7 @@ const Table = ({ todo, setTodo, isLoading }) => {
 
   const handleEdit = async (id, data) => {
     const response = await axios.patch(
-      `http://127.0.0.1:8000/api/todoApp/${id}/`,
+      `https://satyay.pythonanywhere.com/${id}/`,
       data
     );
     const newTodo = todo.map((td) => (td.id === id ? response.data : td));

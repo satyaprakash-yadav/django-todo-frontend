@@ -15,7 +15,7 @@ const TodoForm = ({fetchData}) => {
 
   const saveTodo = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/todoApp/", value);
+      const response = await axios.post("https://satyay.pythonanywhere.com/api/todoApp/", value);
       setValue({'body': ''})
       fetchData();
     } catch (error) {
